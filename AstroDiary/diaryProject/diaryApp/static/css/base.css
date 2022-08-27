@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(209, 215, 221);
+    margin: 0;
+}
+
+.body-container {
+    min-height: 812px;
+    width: 375px;
+    background-color: #161b39;
+    position: relative;
+}
+
+canvas {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}

@@ -1,0 +1,90 @@
+.modal-container {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  /* position: fixed; */
+  /* top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; */
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px); 
+  transition: opacity 0.25s ease;
+  visibility: hidden;
+}
+
+.modal-container.open {
+  visibility: visible;
+}
+
+.modal {
+  position: fixed;
+  transition: top 0.25s ease;
+  width: 90%;
+  height: 570px;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  margin: auto;
+  padding: 15px;
+  overflow: auto;
+  background: linear-gradient(180deg,rgba(111,70,167,0.95), rgba(137,106,201,0.95), rgba(201,157,221,0.95));
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    /* width: 90%;
+    height: 90%; */
+    box-sizing: border-box;
+  }
+}
+
+.modal-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.modal-title {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.modal-close {
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  background: no-repeat;
+  border: none;
+  padding: 0;
+}
+
+
+.modal-stop-button {
+  left: 0;
+  cursor: pointer;
+  background: no-repeat;
+  border: none;
+}
+.frame{
+  z-index: 1;
+  width: 90%;
+  height: 560px;
+  margin: 5.2%;
+}
+
+.astroman{
+  z-index: 1;
+  position: fixed;
+  top: 510px;
+  left: 148px;
+}

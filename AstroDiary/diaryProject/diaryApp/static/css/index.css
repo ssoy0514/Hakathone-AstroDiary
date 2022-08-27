@@ -1,0 +1,228 @@
+@import "./ui/modal.css";
+@import "./ui/button.css";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
+
+/* html,
+body {
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  background-color: #f1f5f9;
+  width: 100%;
+  height: 100%;
+} */
+
+* {
+  font-family: 'Laila', sans-serif;
+}
+
+.modal {
+  background-image: url("http://localhost:8000/static/img/diary-border.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.modal-container {
+  background: linear-gradient(180deg, #6F46A7 0%, #896AC9 33.85%, #C99DDD 91.15%);
+}
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.btn_register button {
+  width: 246px;
+  height: 57px;
+  background: linear-gradient(90deg, #234567 0%, #345678 44.65%, #456789 91.21%);
+  border-radius: 12px;
+  border: 0px;
+  font-weight: bolder;
+  color: white;
+  font-size: 20px;
+  
+}
+
+.navbar_logo {
+  margin-top: -10px;
+}
+
+.btn_register {
+  margin-left: 63px;
+  margin-top: 250px;
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+
+.bg-white {
+  background-color: rgb(255, 255, 255);
+}
+
+.bg-btn {
+  background-color: #896AC9;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  /* display: flex; */
+  /* left : 90%;
+  right: 50%; */
+  /* justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center; */
+  /* top : 50%;
+  bottom: 50%; */
+  font-size: 1em;
+  z-index: 2;
+}
+.modal-container {
+  z-index: 2;
+}
+
+.form-inner{
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-top: 15px;
+}
+
+.createDiary {
+  display: flex;
+  flex-direction: column;
+}
+
+.todoadd{
+  display: flex;
+  flex-direction: column;
+}
+.todo-input{
+  display: flex;
+  flex-direction: row;
+  z-index: 500;
+}
+
+
+.user_info {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 250px;
+}
+
+.todo_group {
+  display: flex;
+  flex-direction:row;
+}
+
+.user_info {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 250px;
+  margin-left: 9%;
+  margin-top: 7%;
+}
+.links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 120px;
+  font-size: small;
+  margin-left: 85%;
+  margin-top: 1%;
+}
+.logouthref{
+  margin-right: 15%;
+}
+
+.todo_group {
+  display: flex;
+  flex-direction:row;
+}
+.navbar_menu_item {
+  width: 200px ;
+  position: absolute;
+}
+
+.user_info a {
+  position: absolute;
+  right: 50px;
+}
+
+.btn-open-modal {
+  width: 247px;
+  height: 57px;
+  color: white;
+  text-align: center;
+  align-items: center;
+}
+
+.diary_write_btn {
+  font-family: 'Noto Serif KR', serif;
+}
+
+.modal-title {
+  font-size: 30px;
+  padding-top: 50px;
+  font-weight: bold;
+  color: #28104E;
+}
+
+h3 {
+  font-size: 23px;
+}
+
+input[type=text] {
+  width: 270px;
+  height: 150px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 12px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+}
+
+.register_btn {
+  width: 20px;
+}
+
+.diary button {
+  width: 70px;
+  height: 30px;
+  border-radius: 12px;
+  border: 0px;
+  font-family: 'Noto Serif KR', serif;
+  color: black;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 95px;
+}
+
+input{
+  color: white;
+}
+input::placeholder {
+  color: white;
+  font-family: 'Noto Serif KR', serif;
+}
+
+
+.navbar_container {
+  position: absolute;
+  right: 10px;
+}

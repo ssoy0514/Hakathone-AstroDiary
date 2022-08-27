@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/index.css'%}"/>
+{% endblock style %}
+{% block js %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+{% endblock js %}
+{% block content %}
+  <div class="container">
+    <div class="user_info">
+      {% if user.is_authenticated %}
+        <input id="username" value={{user.username}} style="display:none;"></input>
+        <span class="navbar_menu_item" style="font-family: 'Noto Serif KR', serif;">안녕하세요, {{user.username}} 님!</span>
+        <div class="links">
+          <a href="{% url 'logout' %}" style="font-family: 'Noto Serif KR', serif; color: white;" class="logouthref">Logout</a>
+          <a href="{% url 'mypage' %}" style="font-family: 'Noto Serif KR', serif; color: white;">MyPage</a>
+        </div>
+
+    </div>
+      <div class="modal-container">
+        <img src="{% static 'img/우주인.svg' %}" class="astroman">
+        <div class="modal">
+          <div class="modal-header">
+            <p class="modal-title">DIARY</p>
+            <button class="modal-close">
+              <img src="{% static 'assets/icons/close-x.svg' %}" alt="close" />
+
+            </button>
+          </div>
+          <article class="modal-body">
+              <form class="createDiary" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="form-inner">
+                    <div class="todoadd">
+                      <h3 style="color: #28104E;">TO-DOs</h3>
+                      <span></span>
+                      <div class="todo-input">
+                        <input id="todo" name="todo" placeholder="오늘 당신의 할 일은?" style="font-family:'Noto Serif KR', serif; background-color:transparent;">
+                        <button type="button" id="add-button" style="margin-left: 20px;">+</button>
+                      </div>
+
+                      <div id="todo-list" style="color:white;"></div>
+                    </div>
+                    <div class="diary">
+                      <h3 style="color: #28104E;">Diary</h3>
+                      <input type="text" id="content" name="content" placeholder="일기를 적어주세요."  style="font-family:'Noto Serif KR', serif;border:1px; border-color:#28104E; background-color:transparent;">
+                      <button onclick="alert('등록되었습니다!'); location.href='home/fishing';", return false; href="{% url 'fishing' %}">등록</button>
+                    </div>
+                  </div>    
+              </form>      
+          </article>
+        </div>
+      </div>
+            <main class="flex">
+              <div class="btn-open-modal btn bg-btn shadow text-center">
+              <p class="diary_write_btn">일기 쓰기</p>
+              </div>
+            </main>
+      <script defer src="{% static 'js/diary.js' %}"></script>
+      <script type="module" src="{% static 'js/index.mjs' %}"></script>
+      <script>
+          let todoSendList = []
+          $('.createDiary').submit((event) => {
+              event.preventDefault()
+              let form = $(".createDiary")[0]
+              let form_data = new FormData(form)
+              todos = todoSendList
+              content = $("#content").val()
+              username = $("#username").val()
+              form_data.append("todos", todos)
+              form_data.append("content", content)
+              form_data.append("username", username)
+              console.log("todos", todos)
+              console.log("content", content)
+              console.log("username",username)
+              // FormData의 key 확인
+              for (let key of form_data.keys()) {
+                  console.log("key",key);
+              }
+              
+              // FormData의 value 확인
+              for (let value of form_data.values()) {
+                  console.log("val",value);
+              }
+              $.ajax({
+                type: "POST",
+                enctype: 'multipart/form-data',
+                url: 'diary',
+                data: form_data,
+                processData: false,
+                contentType: false,
+              })
+            })
+      </script>
+      {% else %}
+      <div class="navbar_container">
+        <div class="navbar_logo">
+
+            <img style="margin-top: 50px;" src="{% static 'images/우주 일기.png' %}"/>
+
+        </div>
+      <div class="btn_register">
+        <button type="button" onclick="location.href='{% url 'login' %}'">Login</button>
+        {% comment %} <br>
+        <br>
+ {% endcomment %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+
+{% endblock content %}
+

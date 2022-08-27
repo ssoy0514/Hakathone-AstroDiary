@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+{% comment %} 여기에 연결할 css <link/> 추가 {% endcomment %}
+<link rel='stylesheet', style='text/css', href="{% static '/css/fishing.css' %}" />
+{% endblock style %}
+{% block js %}
+{% comment %} 여기에 연결할 js <script/> 추가 {% endcomment %}
+<script src="{% static 'js/fishing.js' %}"></script>
+{% endblock js %}
+{% block content %}
+    <div id="main-container">
+        <div id="astro" class="astro">
+            <div class="description">
+                다른 우주인의<br>오늘은 어땠을까?
+            </div>
+            <img id="fishing" class="fishing" src="{% static 'img/LV1_fishing.svg'%}" onclick="fishingHandler()"/>
+        </div>
+        <div id="random-diary" class="random-diary-modal hide">
+            <div class="random-diary-paper">
+                <div class="random-diary-header">
+                    <span>00년 00월 00일<br>user의 일기</span>
+                    <img id="close" src="{% static 'assets/icons/close-x.svg'%}" onclick="hideRandomDiary()" />
+                </div>
+                <div class="random-diary-content">
+                    <div class="content content-todo">
+                        <p>{{user.id}}님의 오늘의 Todo</p>
+                    </div>
+                    <div class="content content-diary">
+                        <p>Q. 오늘 하루 중 가장 마음에 들었던 일은?</p>
+                    </div>
+                </div>
+                <img src="{% static 'img/diary-inner-astro.svg' %}" />
+
+            </div>
+        </div>
+    </div>
+    
+{% endblock content %}

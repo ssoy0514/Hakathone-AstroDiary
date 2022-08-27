@@ -1,0 +1,92 @@
+* {
+    z-index: 10;
+}
+
+.calender {
+    position: relative;
+}
+
+.days {
+    display: flex;
+}
+
+.day {
+    padding-top: 8px;
+    padding-bottom: 3px;
+    width: calc(98%/7);
+    padding-left: 0.5px;
+    text-align: center;
+    transition: all .3s;
+    color: white;
+    font-weight: bold;
+}
+
+.dates {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+}
+
+.date {
+    cursor: pointer;
+    padding: 9px 4px;
+    margin: 4px;
+    width: 30px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: all .3s;
+    font-weight: bold;
+}
+
+.go-today {
+    width: 80%;
+    border-left: 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+
+.nav-btn {
+    width: 20px;
+    height: 20px;
+    border: none;
+    font-size: 16px; 
+    line-height: 15px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.day:nth-child(7n+1), .date:nth-child(7n+1) {
+    color: #d13e3e;
+}
+
+.day:nth-child(7n), .date:nth-child(7n) {
+    color: #396ee2;
+}
+
+.today {
+    position: relative;
+    background-color: #fffc1c96;
+}
+
+.selected {
+    background-color: black;
+    color: #c0bebe !important;
+}
+
+.other {
+    color: rgb(168, 164, 164) !important;
+}
+
+.date_event {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    margin: auto;
+    border-radius: 100%;
+}
+
+.event-itm {
+    font-size: 0;
+}

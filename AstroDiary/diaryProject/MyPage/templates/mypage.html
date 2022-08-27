@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'mypage.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'calendar.css' %}">
+{% endblock style %}
+{% block content %}
+    <div class="basic-info">
+        <div class="profile"></div>
+        <div class="name-wrap">
+            <div class="nick-name">{{user.username}}님</div>
+            <div class="level-name">발자국을 남긴 우주인</div>
+        </div>
+    </div>
+    <div class="middle-info">
+        <div class="fishing-bag">
+            <img src="https://postfiles.pstatic.net/MjAyMjA4MjBfMjQ4/MDAxNjYwOTc2MzI2Njc3.B7NO4sENxgFfxnIUcVL8hv5djoPwUwYVxbtDeaSa8S8g.DD_S4j5QVaqbdL2CA6vuU8XoB2xjKkjsZ5ShZWo3agcg.PNG.ahrefhoo/fishingBag.png?type=w966">
+            <div class="fishing-rod"></div>
+        </div>
+        <div class="flex-col">
+            <div class="year"></div>
+            <div class="calendar_nav">
+                <button class="nav-btn month-prev"><img src="https://postfiles.pstatic.net/MjAyMjA4MjFfMjI5/MDAxNjYxMDI2NTU2Mjgw.WZFDtS4PT7rJRRsCzRhH6Oy3-zcQLxAwHXHBDhSdHgIg.kOJc4U5ykZSvPMIgh2ggyid-JT-HZFCYGO3g5sN7vg0g.PNG.ahrefhoo/Polygon_1.png?type=w966"></button>
+                <div class="month"></div>
+                <button class="nav-btn month-next"><img src="https://postfiles.pstatic.net/MjAyMjA4MjFfNCAg/MDAxNjYxMDI2NTUwOTI4.hezGFhxO-nzprIQnGwRvi1MG0c9eMDyNdCC2S7TrVngg.PnUCDcsOj1vo5HBheYLnLc3pbK2iHihANzC7oS4T_Pog.PNG.ahrefhoo/Polygon_2.png?type=w966"></button>
+            </div>
+            <div class="monthly-total">
+                <div class="this-month">이달의 탐사</div>
+                <span class="total-num">11</span>
+                <span class="count">회</span>
+            </div>
+        </div>
+    </div>
+    <div class="calendar">
+        <div class="days">
+            <div class="day">SUN</div>
+            <div class="day">MON</div>
+            <div class="day">TUE</div>
+            <div class="day">WED</div>
+            <div class="day">THU</div>
+            <div class="day">FRI</div>
+            <div class="day">SAT</div>
+        </div>
+        <div class="dates"></div>
+    </div>
+    <script src="{% static 'js/calendar.js' %}"></script>
+    <script src="{% static 'js/reverse.js' %}"></script>
+
+    <div class="footer">
+        <div class="main-btn">
+            <a href="{% url 'index' %}">
+                <img src="https://postfiles.pstatic.net/MjAyMjA4MjBfOSAg/MDAxNjYwOTc4MTcyNjAz.Q9VZr7j83gvvaudrpS-KP-GqbRFOwf_lKiUWGre5GPsg.CcKPBb9RRw8McAQi5KnicXrP-dMEa2UbDHiwZtcWbkcg.PNG.ahrefhoo/Group_2.png?type=w966">
+            </a>
+        </div>
+    </div>
+{% endblock content %}
